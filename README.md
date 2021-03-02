@@ -1,4 +1,4 @@
-# GROUP-2
+# E-market
 Group members:
 Kolla varuna krishna
 vikram gudda
