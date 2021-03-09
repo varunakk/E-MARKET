@@ -177,3 +177,32 @@ def checkcart(request):
 
 it="none"
   
+def forgtpswrd(request):
+    if request.GET:
+        na=request.GET
+        if "cancel" in na:
+            return render(request,'polls/forgtpswrd.html')
+        name=na['who']
+        pswrd=na['pass']
+        phn=na['phn']
+        repass=na['repass']
+        if len(name)==0 or len(pswrd)==0 or len(phn)==0 or len(repass)==0 :
+            return render(request,'polls/forgtpswrd.html',{'mssg':"enter the details"})
+        try:
+            obj=table.objects.get(user_name=name)
+        except:
+            return render(request,'polls/forgtpswrd.html',{'mssg':"invalid user name"})
+
+        if obj.phn==phn:
+            if pswrd==repass:
+                obj.password=pswrd
+                obj.save()
+                return HttpResponseRedirect('/polls/login/')
+                # render(request,'polls/login.html',{'mssg':"password changed succesfully"})
+            else:
+                 return render(request,'polls/forgtpswrd.html',{'mssg':"re enter password should be same as new password"})
+
+        else:
+            return render(request,'polls/forgtpswrd.html',{'mssg':"phone number not matched"})
+    else:
+        return render(request,'polls/forgtpswrd.html')
