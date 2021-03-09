@@ -34,3 +34,8 @@ class farmer(models.Model):
     password=models.CharField(max_length=200)
     email=models.CharField(max_length=200,default=0)
     phn=models.CharField(max_length=200,default=0)
+class verif(models.Model):
+    def _str_(self):
+        return self.user_name
+    user_name=models.CharField(max_length=200)
+    user_id=models.CharField(max_length=200)
