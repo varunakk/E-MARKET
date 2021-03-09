@@ -1,11 +1,9 @@
-{%load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Registration Form In HTML and CSS</title>
-	<link rel="stylesheet" href="{% static 'css/signuppage.css' %}">
+	<link rel="stylesheet" href="signuppage.css">
 </head>
 <body>
 	
@@ -15,44 +13,59 @@
 			Registration Form
 		</div>
 
-		<form method="GET">
+		<form>
 			<div class="form_wrap">
 				<div class="input_grp">
 					<div class="input_wrap">
-						<label for="nam">User Name</label>
-						<input type="text" name="who" id="nam"><br/>
+						<label for="fname">First Name</label>
+						<input type="text" id="fname">
 					</div>
 					<div class="input_wrap">
-						<label for="id_1723">Password</label>
-<input type="text" name="pass" id="id_1723"><br/>
+						<label for="lname">Last Name</label>
+						<input type="text" id="lname">
 					</div>
 				</div>
 				<div class="input_wrap">
-					<label for="email">Email Address</label>
-					<input type="text" name="email"id="email">
+					<label for="Phone number">Phone number(only India)</label>
+					<input type="text" id="phone number">
 				</div>
 				<div class="input_wrap">
-					<label for="id_1">Phone-number</label>
-					<input type="text" name="phn" id="id_1"><br/>
+					<label>Account type</label>
+					<ul>
+						<li>
+							<label class="radio_wrap">
+								<input type="radio" name="Account type" value="Farmer" class="input_radio" checked>
+								<span>Farmer</span>
+							</label>
+						</li>
+						<li>
+							<label class="radio_wrap">
+								<input type="radio" name="Account type" value="Buyer" class="input_radio">
+								<span>Buyer</span>
+							</label>
+						</li>
+					</ul>
 				</div>
 				<div class="input_wrap">
-					<input type="submit" value="Register Now" class="submit_btn">
-                    
+					<label for="city">City</label>
+					<input type="text" id="city">
 				</div>
-                <div class="input_wrap">
-                    <input type="submit" name="cancel" value="Cancel" class="cancel_btn">
+				<div class="input_wrap">
+					<label for="country">Country</label>
+					<input type="text" id="country">
+				</div>
+				<div class="input_wrap">
+					<input type="submit" value="Next" class="submit_btn">
                 </div>
+                
 			</div>
 		</form>
 	</div>
 </div>
-<script>
-    var str='{{mssg}}';
-    var n = str.length;
-    if(n!=0){
-    alert('{{ mssg }}');
+<style>
+    body {
+      background-image: url('pic1.jpg');
     }
-</script>
-
+    </style>
 </body>
 </html>

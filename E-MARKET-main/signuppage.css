@@ -121,16 +121,6 @@ body{
 	cursor: pointer;
 }
 
-.form_wrap .cancel_btn{
-	width: 100%;
-	background: #ebd0ce;
-	padding: 10px;
-	border: 0;
-	border-radius: 3px;
-	text-transform: uppercase;
-	letter-spacing: 3px;
-	cursor: pointer;
-}
 .form_wrap .submit_btn:hover{
 	background: #ffd5d2;
 }

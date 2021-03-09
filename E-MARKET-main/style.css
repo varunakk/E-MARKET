@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    background: url(logback.jpg);
+    background: url(pic1.jpg);
     background-size: cover;
     background-position: center;
     font-family: sans-serif;
@@ -9,7 +9,7 @@ body{
 
 .loginbox{
     width: 320px;
-    height: 520px;
+    height: 420px;
     background: #000;
     color: #fff;
     top: 50%;
@@ -17,7 +17,7 @@ body{
     position: absolute;
     transform: translate(-50%,-50%);
     box-sizing: border-box;
-    padding: 90px 30px;
+    padding: 70px 30px;
 }
 
 .avatar{
