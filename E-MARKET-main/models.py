@@ -39,3 +39,11 @@ class verif(models.Model):
         return self.user_name
     user_name=models.CharField(max_length=200)
     user_id=models.CharField(max_length=200)
+class seller(models.Model):
+    def _str_(self):
+        return self.user_name
+    user_name=models.CharField(max_length=200)
+    crop_name=models.CharField(max_length=200)
+    price_per_kg=models.IntegerField(default=0)
+    max_kg=models.IntegerField(default=0)
+    photo=models.ImageField(upload_to='images',default=0)
