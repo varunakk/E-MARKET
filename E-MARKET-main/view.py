@@ -160,5 +160,51 @@ def checkcart(request):
     for i in o:
         print(i.item)
     return render(request,'polls/choutcart.html',{'name':nm,'obj':o})
+
+def loginfarm(request):
+    if request.GET:
+        na=request.GET
+        if "cancel" in na:
+            return render(request,'polls/loginfarm.html')
+        
+        name=na['who']
+        pswrd=na['pass']
+        global nm
+        print(nm)
+        nm=name
+        #nm=name
+        print(nm)
+        try:
+            obj=farmer.objects.get(user_name=name)
+        except:
+            return render(request,'polls/loginfarm.html',{'mssg':"invalid password or username"})
+            
+        if obj.password == pswrd:
+            return render(request,'polls/buyAndSell.html',{'name':name})
+        else:
+            return render(request,'polls/loginfarm.html',{'mssg':"invalid password or username"})
+    else:
+        return render(request,'polls/loginfarm.html')
+
+
+def login(request):
+    if request.GET:
+        na=request.GET
+        if "cancel" in na:
+            return render(request,'polls/login.html')
+        
+        name=na['who']
+        pswrd=na['pass']
+        try:
+            obj=table.objects.get(user_name=name)
+        except:
+            return render(request,'polls/login.html',{'mssg':"invalid password or username"})
+            
+        if obj.password == pswrd:
+            return render(request,'polls/buyerbuy.html')
+        else:
+            return render(request,'polls/login.html',{'mssg':"invalid password or username"})
+    else:
+        return render(request,'polls/login.html')
   
   
