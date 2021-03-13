@@ -1,7 +1,7 @@
 # E-market
 Group members:
 Kolla varuna krishna
-vikram gudda
-bhragav
-bhanu
+Vikram gudda
+Bhargav ram
+Bhanu Chaitanya
 venkatesh
