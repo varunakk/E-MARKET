@@ -53,7 +53,6 @@ input[type=submit]:hover {
   margin-top: 6px;    
 }    
     
-/* Clear floats after the columns */    
 .row:after {    
   content: "";    
   display: table;    
@@ -100,8 +99,7 @@ body{
 .rate > input:checked ~ label:hover ~ label,
 .rate > label:hover ~ input:checked ~ label {
     color: black;
-}
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */    
+} 
 </style>    
 </head>    
 <body>    
@@ -162,10 +160,14 @@ body{
         </div>    
       </div>
     <div class="row">    
-      <input type="submit" value="Submit">    
+      <input type="submit" onclick="clicked();" value="Submit">    
     </div>    
   </form>    
 </div>    
-    
+<script >
+  function clicked() {
+      alert('Thanks for your feedback');
+  }
+</script>   
 </body>    
 </html>    
