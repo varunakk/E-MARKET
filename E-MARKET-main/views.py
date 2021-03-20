@@ -251,3 +251,30 @@ def login(request):
             return render(request,'polls/login.html',{'mssg':"invalid password or username"})
     else:
         return render(request,'polls/login.html')
+
+def sell(request):
+    if request.GET:
+        na=request.GET
+        if "cancel" in na:
+            return render(request,'polls/seller.html')
+        name=na['nam']
+        ident=na['ident']
+        crop=na['crop']
+        price=na['price']
+        max_kg=na['max']
+        img=na['img']
+        if len(name)==0 or len(ident)==0 or max_kg==0 or len(crop)==0 or len(price)==0 or len(img)==0:
+            return render(request,'polls/seller.html',{'mssg':"enter the details"})
+        try:
+            obj=verif.objects.get(user_name=name)
+        except:
+            return render(request,'polls/seller.html',{'mssg':"invalid farmer id"})
+
+        if obj.user_id==ident:
+            s=seller(user_name=name,crop_name=crop,price_per_kg=price,photo=img,max_kg=max_kg)
+            s.save()
+            return render(request,'polls/succsesful.html')
+        else:
+            return render(request,'polls/seller.html',{'mssg':"invalid farmer id"})        
+    else:   
+        return render(request,'polls/seller.html')
